@@ -1,0 +1,161 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.5.19
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema child_tracing
+--
+
+CREATE DATABASE IF NOT EXISTS child_tracing;
+USE child_tracing;
+
+--
+-- Definition of table `child_location`
+--
+
+DROP TABLE IF EXISTS `child_location`;
+CREATE TABLE `child_location` (
+  `id_` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` varchar(45) NOT NULL,
+  `lat_` varchar(45) NOT NULL,
+  `lon_` varchar(45) NOT NULL,
+  `panic` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `child_location`
+--
+
+/*!40000 ALTER TABLE `child_location` DISABLE KEYS */;
+INSERT INTO `child_location` (`id_`,`id`,`lat_`,`lon_`,`panic`) VALUES 
+ (1,'1','18.551451','73.934784','1'),
+ (2,'2','18.551451','73.934784','0');
+/*!40000 ALTER TABLE `child_location` ENABLE KEYS */;
+
+
+--
+-- Definition of table `children_details`
+--
+
+DROP TABLE IF EXISTS `children_details`;
+CREATE TABLE `children_details` (
+  `name` varchar(45) NOT NULL,
+  `class_` varchar(45) NOT NULL,
+  `school` varchar(45) NOT NULL,
+  `div_` varchar(45) NOT NULL,
+  `bdate` varchar(45) NOT NULL,
+  `parent_contact` varchar(45) NOT NULL,
+  `parent_name` varchar(45) NOT NULL,
+  `address` varchar(45) NOT NULL,
+  `lat` varchar(45) NOT NULL,
+  `lon` varchar(45) NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `children_details`
+--
+
+/*!40000 ALTER TABLE `children_details` DISABLE KEYS */;
+INSERT INTO `children_details` (`name`,`class_`,`school`,`div_`,`bdate`,`parent_contact`,`parent_name`,`address`,`lat`,`lon`,`id`) VALUES 
+ ('Pramod','BE','BE','C','19/061991','7350706868','Pramod','Pune','18.551451','73.934784',1),
+ ('dnyana','Comp','Parikrama','Comp','19/061991','7350706868','kka','pune','18.551451','73.934784',2);
+/*!40000 ALTER TABLE `children_details` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_admin`
+--
+
+DROP TABLE IF EXISTS `tbl_admin`;
+CREATE TABLE `tbl_admin` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_admin`
+--
+
+/*!40000 ALTER TABLE `tbl_admin` DISABLE KEYS */;
+INSERT INTO `tbl_admin` (`id`,`username`,`password`) VALUES 
+ (1,'admin','admin');
+/*!40000 ALTER TABLE `tbl_admin` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_driver`
+--
+
+DROP TABLE IF EXISTS `tbl_driver`;
+CREATE TABLE `tbl_driver` (
+  `driver_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `fname` varchar(45) NOT NULL,
+  `lname` varchar(45) NOT NULL,
+  `mobile` varchar(45) NOT NULL,
+  `address` varchar(45) NOT NULL,
+  `dob` varchar(45) NOT NULL,
+  `adhar` varchar(45) NOT NULL,
+  `license` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `imgPath` varchar(45) NOT NULL,
+  PRIMARY KEY (`driver_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_driver`
+--
+
+/*!40000 ALTER TABLE `tbl_driver` DISABLE KEYS */;
+INSERT INTO `tbl_driver` (`driver_id`,`fname`,`lname`,`mobile`,`address`,`dob`,`adhar`,`license`,`email`,`imgPath`) VALUES 
+ (12,'Pramod','Pramod','9890430022','pune','2019-01-11','134546565465','45421231321','thephoenixzone@gmail.com','images/driver profile/c4.jpg');
+/*!40000 ALTER TABLE `tbl_driver` ENABLE KEYS */;
+
+
+--
+-- Definition of table `tbl_vehicle`
+--
+
+DROP TABLE IF EXISTS `tbl_vehicle`;
+CREATE TABLE `tbl_vehicle` (
+  `vehicle_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `vehicle_no` varchar(45) NOT NULL,
+  `type` varchar(45) NOT NULL,
+  PRIMARY KEY (`vehicle_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_vehicle`
+--
+
+/*!40000 ALTER TABLE `tbl_vehicle` DISABLE KEYS */;
+INSERT INTO `tbl_vehicle` (`vehicle_id`,`vehicle_no`,`type`) VALUES 
+ (123,'Mh12NN8787','tempo');
+/*!40000 ALTER TABLE `tbl_vehicle` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
